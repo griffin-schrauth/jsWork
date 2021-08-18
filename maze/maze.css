@@ -30,15 +30,15 @@ h1 {
 }
 
 #gameboard {
-    width: 450px;
+    width: 500px;
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
 }
 
 .box {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;

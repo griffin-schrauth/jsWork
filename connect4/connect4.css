@@ -43,7 +43,7 @@ h1 {
     justify-content: center;
     align-items: center;
     color: var(--purple); 
-    font-size: 150px;
+    font-size: 125px;
 }
 
 button {
@@ -60,4 +60,10 @@ button {
 button:hover {
     cursor: pointer;
     transform: translateY(-2px);
+}
+
+.col {
+    margin-left: 35px;
+    margin-right: 8px;
+    margin-top: 15px;
 }

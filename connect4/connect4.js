@@ -1,5 +1,7 @@
 const boxes = Array.from(document.getElementsByClassName('box'));
+const buttons = Array.from(document.getElementsByClassName('col'));
 console.log(boxes);
+console.log(buttons);
 
 const playText = document.getElementById('playText');
 const restartBtn = document.getElementById('restartBtn');
@@ -22,10 +24,15 @@ const drawBoard = () => {
             styleString += 'border-top: 3px solid var(--purple);';
         }
         box.style = styleString;
-        box.addEventListener('click',boxClicked)
-
     });
 };
+
+const element = document.querySelector(".col");
+
+element.addEventListener("click", () => {
+	console.log("clicked element");
+});
+
 
 const boxClicked = (e) => {
     

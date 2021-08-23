@@ -45,13 +45,53 @@ document.getElementById("col1").addEventListener("click", function() {
         boxes[28].innerText = currentPlayer;
         currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
         count = count + 1;
+    } else if (count == 2){
+        boxes[21].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 3){
+        boxes[14].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 4){
+        boxes[7].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 5){
+        boxes[0].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
     }
     
     //box [0,7,14,21,28,35] indexes for this column
 });
 document.getElementById("col2").addEventListener("click", function() {
     console.log("button 2");
-    boxes[36].innerText = currentPlayer;
+    if (count == 0) {
+        boxes[36].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 1){
+        boxes[29].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 2){
+        boxes[22].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 3){
+        boxes[15].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 4){
+        boxes[8].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    } else if (count == 5){
+        boxes[1].innerText = currentPlayer;
+        currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+        count = count + 1;
+    }
     //box [1,8,15,22,29,36] indexes for this column
 });
 document.getElementById("col3").addEventListener("click", function() {

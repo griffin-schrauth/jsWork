@@ -250,8 +250,8 @@ document.getElementById("col7").addEventListener("click", function() {
 
 
 const check = () => {
-    if(boxes[41] == 'X'){
-        if(boxes[40] == 'X' && boxes[39] == 'X' && boxes[38] == 'X'){
+    if(boxes[41] == currentPlayer){
+        if(boxes[40] == currentPlayer && boxes[39] == currentPlayer && boxes[38] == currentPlayer){
             console.log(`${currentPlayer} wins`)
             return true;
         }

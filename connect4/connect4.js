@@ -62,12 +62,14 @@ document.getElementById("col1").addEventListener("click", function() {
         boxes[0].innerText = currentPlayer;
         count1 = count1 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [0,7,14,21,28,35] indexes for this column
+    
 });
 document.getElementById("col2").addEventListener("click", function() {
     console.log("button 2");
@@ -90,12 +92,15 @@ document.getElementById("col2").addEventListener("click", function() {
         boxes[1].innerText = currentPlayer;
         count2 = count2 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
+    
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [1,8,15,22,29,36] indexes for this column
+    
 });
 document.getElementById("col3").addEventListener("click", function() {
     console.log("button 3");
@@ -118,12 +123,14 @@ document.getElementById("col3").addEventListener("click", function() {
         boxes[2].innerText = currentPlayer;
         count3 = count3 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [2,9,16,23,30,37] indexes for this column
+    
 });
 document.getElementById("col4").addEventListener("click", function() {
     console.log("button 4");
@@ -146,12 +153,14 @@ document.getElementById("col4").addEventListener("click", function() {
         boxes[3].innerText = currentPlayer;
         count4 = count4 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [3,10,17,24,31,38] indexes for this column
+    
 });
 document.getElementById("col5").addEventListener("click", function() {
     console.log("button 5");
@@ -174,12 +183,14 @@ document.getElementById("col5").addEventListener("click", function() {
         boxes[4].innerText = currentPlayer;
         count5 = count5 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [4,11,18,25,32,39] indexes for this column
+   
 });
 document.getElementById("col6").addEventListener("click", function() {
     console.log("button 6");
@@ -202,12 +213,14 @@ document.getElementById("col6").addEventListener("click", function() {
         boxes[5].innerText = currentPlayer;
         count6 = count6 + 1;
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [5,12,19,26,33,40] indexes for this column
+    
 });
 document.getElementById("col7").addEventListener("click", function() {
     console.log("button 7");
@@ -237,22 +250,44 @@ document.getElementById("col7").addEventListener("click", function() {
         count7 = count7 + 1;
         
     }
+    console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
         return;
     }
     currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
 
     //box [6,13,20,27,34,41] indexes for this column
 });
 
 
-
-
 const check = () => {
-    if(boxes[41] == currentPlayer){
-        if(boxes[40] == currentPlayer && boxes[39] == currentPlayer && boxes[38] == currentPlayer){
-            console.log(`${currentPlayer} wins`)
+    if(boxes[41].innerText == currentPlayer){
+        if(boxes[40].innerText == currentPlayer && boxes[39].innerText == currentPlayer && boxes[38].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom`)
+            return true;
+        }
+        if(boxes[33].innerText == currentPlayer && boxes[25].innerText == currentPlayer && boxes[17].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins diagonally`)
+            return true;
+        }
+        if(boxes[34].innerText == currentPlayer && boxes[27].innerText == currentPlayer && boxes[20].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom right`)
+            return true;
+        }
+    }
+    if(boxes[40].innerText == currentPlayer){
+        if(boxes[39].innerText == currentPlayer && boxes[38].innerText == currentPlayer && boxes[37].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins bottom`)
+            return true;
+        }
+        if(boxes[33].innerText == currentPlayer && boxes[26].innerText == currentPlayer && boxes[19].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom second column from the right`)
+            return true;
+        }
+        if(boxes[32].innerText == currentPlayer && boxes[24].innerText == currentPlayer && boxes[16].innerText == currentPlayer){
+            console.log(`${currentPlayer} wins on the bottom right diagonal`)
             return true;
         }
     }

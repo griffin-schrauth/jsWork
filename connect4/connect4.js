@@ -263,32 +263,20 @@ document.getElementById("col7").addEventListener("click", function() {
 
 
 const check = () => {
-    if(boxes[41].innerText == currentPlayer){
-        if(boxes[40].innerText == currentPlayer && boxes[39].innerText == currentPlayer && boxes[38].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom`)
-            return true;
-        }
-        if(boxes[33].innerText == currentPlayer && boxes[25].innerText == currentPlayer && boxes[17].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins diagonally`)
-            return true;
-        }
-        if(boxes[34].innerText == currentPlayer && boxes[27].innerText == currentPlayer && boxes[20].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom right`)
-            return true;
-        }
-    }
-    if(boxes[40].innerText == currentPlayer){
-        if(boxes[39].innerText == currentPlayer && boxes[38].innerText == currentPlayer && boxes[37].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins bottom`)
-            return true;
-        }
-        if(boxes[33].innerText == currentPlayer && boxes[26].innerText == currentPlayer && boxes[19].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom second column from the right`)
-            return true;
-        }
-        if(boxes[32].innerText == currentPlayer && boxes[24].innerText == currentPlayer && boxes[16].innerText == currentPlayer){
-            console.log(`${currentPlayer} wins on the bottom right diagonal`)
-            return true;
+    for( let i = 41; i >= 0; i--){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 8].innerText == currentPlayer && boxes[i - 16].innerText == currentPlayer && boxes[i - 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
         }
     }
 };

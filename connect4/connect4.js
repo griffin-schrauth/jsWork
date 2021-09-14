@@ -261,7 +261,7 @@ document.getElementById("col7").addEventListener("click", function() {
     //box [6,13,20,27,34,41] indexes for this column
 });
 
-
+// I believe when check is being called its it going out of scope
 const check = () => {
     for( let i = 41; i >= 0; i--){
         if(boxes[i].innerText == currentPlayer){

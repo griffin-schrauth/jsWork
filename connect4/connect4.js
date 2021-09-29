@@ -43,7 +43,7 @@ document.getElementById("col1").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -66,7 +66,7 @@ document.getElementById("col2").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -90,7 +90,7 @@ document.getElementById("col3").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -112,7 +112,7 @@ document.getElementById("col4").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -134,7 +134,7 @@ document.getElementById("col5").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -156,7 +156,7 @@ document.getElementById("col6").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -178,7 +178,7 @@ document.getElementById("col7").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
-            if(checkBotRight()){
+            if(check()){
                 playText.innerText = `${currentPlayer} has won`;
                 return;
             }
@@ -193,8 +193,8 @@ document.getElementById("col7").addEventListener("click", function() {
     //box [6,13,20,27,34,41] indexes for this column
 });
 
-// goes out of scope need to find way to check all boxes so that none go out of scope
-const checkBotRight = () => {
+// will check each box for winner
+const check = () => {//check the bottom three rows and all combos first
     for(var i = 41; i >= 27; i-= 7){
         if(boxes[i].innerText == currentPlayer){
             if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
@@ -246,7 +246,215 @@ const checkBotRight = () => {
             }
         }
     }
+    for( i = 38; i >= 24; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 8].innerText == currentPlayer && boxes[i - 16].innerText == currentPlayer && boxes[i - 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 6].innerText == currentPlayer && boxes[i - 12].innerText == currentPlayer && boxes[i - 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 37; i >= 23; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 6].innerText == currentPlayer && boxes[i - 12].innerText == currentPlayer && boxes[i - 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 36; i >= 22; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 6].innerText == currentPlayer && boxes[i - 12].innerText == currentPlayer && boxes[i - 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 35; i >= 21; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 6].innerText == currentPlayer && boxes[i - 12].innerText == currentPlayer && boxes[i - 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    //below will now check the top three rows
+    for( i = 0; i <= 14; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 8].innerText == currentPlayer && boxes[i + 16].innerText == currentPlayer && boxes[i + 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 1; i <= 15; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 8].innerText == currentPlayer && boxes[i + 16].innerText == currentPlayer && boxes[i + 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 2; i <= 16; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 8].innerText == currentPlayer && boxes[i + 16].innerText == currentPlayer && boxes[i + 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 3; i <= 17; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 1].innerText == currentPlayer && boxes[i + 2].innerText == currentPlayer && boxes[i + 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 6].innerText == currentPlayer && boxes[i + 12].innerText == currentPlayer && boxes[i + 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 8].innerText == currentPlayer && boxes[i + 16].innerText == currentPlayer && boxes[i + 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 4; i <= 18; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 6].innerText == currentPlayer && boxes[i + 12].innerText == currentPlayer && boxes[i + 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 5; i <= 19; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 6].innerText == currentPlayer && boxes[i + 12].innerText == currentPlayer && boxes[i + 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 6; i <= 20; i += 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i + 6].innerText == currentPlayer && boxes[i + 12].innerText == currentPlayer && boxes[i + 18].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i + 7].innerText == currentPlayer && boxes[i + 14].innerText == currentPlayer && boxes[i + 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
 };
+
+
 
 const restart = () => {
     spaces.forEach((space,index) => {

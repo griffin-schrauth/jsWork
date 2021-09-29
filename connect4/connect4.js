@@ -43,16 +43,18 @@ document.getElementById("col1").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [0,7,14,21,28,35] indexes for this column
     
 });
@@ -64,17 +66,19 @@ document.getElementById("col2").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
     
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [1,8,15,22,29,36] indexes for this column
     
 });
@@ -86,15 +90,17 @@ document.getElementById("col3").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [2,9,16,23,30,37] indexes for this column
     
 });
@@ -106,15 +112,17 @@ document.getElementById("col4").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [3,10,17,24,31,38] indexes for this column
     
 });
@@ -126,15 +134,17 @@ document.getElementById("col5").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [4,11,18,25,32,39] indexes for this column
    
 });
@@ -146,15 +156,17 @@ document.getElementById("col6").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     //box [5,12,19,26,33,40] indexes for this column
     
 });
@@ -166,25 +178,61 @@ document.getElementById("col7").addEventListener("click", function() {
             continue;
         } else{
             boxes[i].innerText = currentPlayer;
+            if(checkBotRight()){
+                playText.innerText = `${currentPlayer} has won`;
+                return;
+            }
+            currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
             break;
         }
     }
     console.log(`${currentPlayer} `)
-    if(check()){
-        playText.innerText = `${currentPlayer} has won`;
-        return;
-    }
-    currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
+    //currentPlayer = currentPlayer == O_TEXT ? X_TEXT : O_TEXT;
     
 
     //box [6,13,20,27,34,41] indexes for this column
 });
 
 // goes out of scope need to find way to check all boxes so that none go out of scope
-const check = () => {
-    for( let i = 41; i >= 0; i--){
+const checkBotRight = () => {
+    for(var i = 41; i >= 27; i-= 7){
         if(boxes[i].innerText == currentPlayer){
             if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 8].innerText == currentPlayer && boxes[i - 16].innerText == currentPlayer && boxes[i - 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 40; i >= 26; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
+                console.log(`${currentPlayer} wins on the bottom`)
+                return true;
+            }
+            if(boxes[i - 8].innerText == currentPlayer && boxes[i - 16].innerText == currentPlayer && boxes[i - 24].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins diagonally`)
+                return true;
+            }
+            if(boxes[i - 7].innerText == currentPlayer && boxes[i - 14].innerText == currentPlayer && boxes[i - 21].innerText == currentPlayer){
+                console.log(`${currentPlayer} wins on the bottom right`)
+                return true;
+            }
+        }
+    }
+    for( i = 39; i >= 25; i-= 7){
+        if(boxes[i].innerText == currentPlayer){
+            if(boxes[i - 1].innerText == currentPlayer && boxes[i - 2].innerText == currentPlayer && boxes[i - 3].innerText == currentPlayer){
+                
                 console.log(`${currentPlayer} wins on the bottom`)
                 return true;
             }
@@ -209,13 +257,7 @@ const restart = () => {
     })
     playText.innerText = `Let's Play!`;
     currentPlayer = O_TEXT;
-    count1 = 0;
-    count2 = 0
-    count3 = 0
-    count4 = 0
-    count5 = 0
-    count6 = 0
-    count7 = 0
+    
 };
 
 

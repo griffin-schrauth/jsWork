@@ -9,13 +9,7 @@ const spaces = [];
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer;
-var count1 = 0
-var count2 = 0
-var count3 = 0
-var count4 = 0
-var count5 = 0
-var count6 = 0
-var count7 = 0
+
 
 
 
@@ -32,7 +26,7 @@ const drawBoard = () => {
             styleString += 'border-top: 3px solid var(--purple);';
         }
         box.style = styleString;
-        box.addEventListener('click',boxClicked)
+        //box.addEventListener('click',boxClicked)
         
     });
 };
@@ -43,25 +37,16 @@ const boxClicked = (e) => {
 
 document.getElementById("col1").addEventListener("click", function() {
     console.log("button 1");
-    if (count1 == 0) {
-        boxes[35].innerText = currentPlayer;
-        count1 = count1 + 1;
-    } else if (count1 == 1){
-        boxes[28].innerText = currentPlayer;
-        count1 = count1 + 1;
-    } else if (count1 == 2){
-        boxes[21].innerText = currentPlayer;
-        count1 = count1 + 1;
-    } else if (count1 == 3){
-        boxes[14].innerText = currentPlayer;
-        count1 = count1 + 1;
-    } else if (count1 == 4){
-        boxes[7].innerText = currentPlayer;
-        count1 = count1 + 1;
-    } else if (count1 == 5){
-        boxes[0].innerText = currentPlayer;
-        count1 = count1 + 1;
+    for (var i = 35; i >= 0; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
+    
     console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
@@ -73,25 +58,16 @@ document.getElementById("col1").addEventListener("click", function() {
 });
 document.getElementById("col2").addEventListener("click", function() {
     console.log("button 2");
-    if (count2 == 0) {
-        boxes[36].innerText = currentPlayer;
-        count2 = count2 + 1;
-    } else if (count2 == 1){
-        boxes[29].innerText = currentPlayer;
-        count2 = count2 + 1;
-    } else if (count2 == 2){
-        boxes[22].innerText = currentPlayer;
-        count2 = count2 + 1;
-    } else if (count2 == 3){
-        boxes[15].innerText = currentPlayer;
-        count2 = count2 + 1;
-    } else if (count2 == 4){
-        boxes[8].innerText = currentPlayer;
-        count2 = count2 + 1;
-    } else if (count2 == 5){
-        boxes[1].innerText = currentPlayer;
-        count2 = count2 + 1;
+    for (var i = 36; i >= 1; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
+    
     console.log(`${currentPlayer} `)
     if(check()){
         playText.innerText = `${currentPlayer} has won`;
@@ -104,24 +80,14 @@ document.getElementById("col2").addEventListener("click", function() {
 });
 document.getElementById("col3").addEventListener("click", function() {
     console.log("button 3");
-    if (count3 == 0) {
-        boxes[37].innerText = currentPlayer;
-        count3 = count3 + 1;
-    } else if (count3 == 1){
-        boxes[30].innerText = currentPlayer;
-        count3 = count3 + 1;
-    } else if (count3 == 2){
-        boxes[23].innerText = currentPlayer;
-        count3 = count3 + 1;
-    } else if (count3 == 3){
-        boxes[16].innerText = currentPlayer;
-        count3 = count3 + 1;
-    } else if (count3 == 4){
-        boxes[9].innerText = currentPlayer;
-        count3 = count3 + 1;
-    } else if (count3 == 5){
-        boxes[2].innerText = currentPlayer;
-        count3 = count3 + 1;
+    for (var i = 37; i >= 2; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
     console.log(`${currentPlayer} `)
     if(check()){
@@ -134,24 +100,14 @@ document.getElementById("col3").addEventListener("click", function() {
 });
 document.getElementById("col4").addEventListener("click", function() {
     console.log("button 4");
-    if (count4 == 0) {
-        boxes[38].innerText = currentPlayer;
-        count4 = count4 + 1;
-    } else if (count4 == 1){
-        boxes[31].innerText = currentPlayer;
-        count4 = count4 + 1;
-    } else if (count4 == 2){
-        boxes[24].innerText = currentPlayer;
-        count4 = count4 + 1;
-    } else if (count4 == 3){
-        boxes[17].innerText = currentPlayer;
-        count4 = count4 + 1;
-    } else if (count4 == 4){
-        boxes[10].innerText = currentPlayer;
-        count4 = count4 + 1;
-    } else if (count4 == 5){
-        boxes[3].innerText = currentPlayer;
-        count4 = count4 + 1;
+    for (var i = 38; i >= 3; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
     console.log(`${currentPlayer} `)
     if(check()){
@@ -164,24 +120,14 @@ document.getElementById("col4").addEventListener("click", function() {
 });
 document.getElementById("col5").addEventListener("click", function() {
     console.log("button 5");
-    if (count5 == 0) {
-        boxes[39].innerText = currentPlayer;
-        count5 = count5 + 1;
-    } else if (count5 == 1){
-        boxes[32].innerText = currentPlayer;
-        count5 = count5 + 1;
-    } else if (count5 == 2){
-        boxes[25].innerText = currentPlayer;
-        count5 = count5 + 1;
-    } else if (count5 == 3){
-        boxes[18].innerText = currentPlayer;
-        count5 = count5 + 1;
-    } else if (count5 == 4){
-        boxes[11].innerText = currentPlayer;
-        count5 = count5 + 1;
-    } else if (count5 == 5){
-        boxes[4].innerText = currentPlayer;
-        count5 = count5 + 1;
+    for (var i = 39; i >= 4; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
     console.log(`${currentPlayer} `)
     if(check()){
@@ -194,24 +140,14 @@ document.getElementById("col5").addEventListener("click", function() {
 });
 document.getElementById("col6").addEventListener("click", function() {
     console.log("button 6");
-    if (count6 == 0) {
-        boxes[40].innerText = currentPlayer;
-        count6 = count6 + 1;
-    } else if (count6 == 1){
-        boxes[33].innerText = currentPlayer;
-        count6 = count6 + 1;
-    } else if (count6 == 2){
-        boxes[26].innerText = currentPlayer;
-        count6 = count6 + 1;
-    } else if (count6 == 3){
-        boxes[19].innerText = currentPlayer;
-        count6 = count6 + 1;
-    } else if (count6 == 4){
-        boxes[12].innerText = currentPlayer;
-        count6 = count6 + 1;
-    } else if (count6 == 5){
-        boxes[5].innerText = currentPlayer;
-        count6 = count6 + 1;
+    for (var i = 40; i >= 5; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
     console.log(`${currentPlayer} `)
     if(check()){
@@ -224,31 +160,14 @@ document.getElementById("col6").addEventListener("click", function() {
 });
 document.getElementById("col7").addEventListener("click", function() {
     console.log("button 7");
-    if (count7 == 0) {
-        boxes[41].innerText = currentPlayer;
-        count7 = count7 + 1;
-
-    } else if (count7 == 1){
-        boxes[34].innerText = currentPlayer;
-        count7 = count7 + 1;
-
-    } else if (count7 == 2){
-        boxes[27].innerText = currentPlayer;
-        count7 = count7 + 1;
-
-    } else if (count7 == 3){
-        boxes[20].innerText = currentPlayer;
-        count7 = count7 + 1;
-
-    } else if (count7 == 4){
-        boxes[13].innerText = currentPlayer;
-        count7 = count7 + 1;
-
-    } else if (count7 == 5){
-        boxes[6].innerText = currentPlayer;
-        //console.log(`${currentPlayer} `)
-        count7 = count7 + 1;
-        
+    for (var i = 41; i >= 6; i -= 7){
+        if(boxes[i].innerText == "X" || boxes[i].innerText == "O" ){
+            console.log("box is already filled")
+            continue;
+        } else{
+            boxes[i].innerText = currentPlayer;
+            break;
+        }
     }
     console.log(`${currentPlayer} `)
     if(check()){
@@ -261,7 +180,7 @@ document.getElementById("col7").addEventListener("click", function() {
     //box [6,13,20,27,34,41] indexes for this column
 });
 
-// I believe when check is being called its it going out of scope
+// goes out of scope need to find way to check all boxes so that none go out of scope
 const check = () => {
     for( let i = 41; i >= 0; i--){
         if(boxes[i].innerText == currentPlayer){
